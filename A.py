@@ -14,9 +14,19 @@ def grade_score(score):
         return "Invalid score"
 
 def main():
-    score = float(input("Enter your score: "))
-    grade = grade_score(score)
-    print("Your grade is:", grade)
-print( "please put it in numbers")
+    while True:
+        try:
+            score = float(input("Enter your score: "))
+            if 0 <= score <= 100:
+                grade = grade_score(score)
+                print("Your grade is:", grade)
+                break
+            else:
+                print("Score must be between 0 and 100.")
+        except ValueError:
+            print("Please enter a valid number.")
+
 if __name__ == "__main__":
+    print("Please put it in numbers")
     main()
+    
